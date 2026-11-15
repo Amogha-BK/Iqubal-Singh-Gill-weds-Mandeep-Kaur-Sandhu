@@ -24,7 +24,7 @@ nav { position: sticky; top: 0; z-index: 5; display: flex; align-items: center; 
 .button { display: inline-flex; align-items: center; justify-content: center; gap: 9px; padding: 12px 15px; border: 1px solid #88755780; background: #f7efdfc9; font: 500 10px var(--sans); letter-spacing: .04em; border-radius: 2px; transition: background .2s; }
 .button:hover { background: #fff7e9; }
 .eyebrow { font: 500 9px/1.8 var(--sans); letter-spacing: .17em; text-transform: uppercase; }
-.print-page { width: 100%; aspect-ratio: 16 / 19; }
+.print-page { width: 100%; aspect-ratio: 9 / 16; }
 .cover-page { position: relative; background: #f4eddf; }
 .cover-page > img { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: cover; }
 .cover-copy { position: absolute; top: 18%; width: 100%; text-align: center; padding: 0 22px; color: #5b5945; }
@@ -33,7 +33,7 @@ nav { position: sticky; top: 0; z-index: 5; display: flex; align-items: center; 
 .cover-full-names { font-size: 18px; }
 .cover-date { font: 500 10px/1.8 var(--sans); text-transform: uppercase; letter-spacing: .2em; margin-top: 12px; }
 .scroll-link { display: flex; align-items: center; justify-content: center; gap: 7px; margin: 15px auto 0; font: 9px var(--sans); letter-spacing: .08em; }
-.stationery { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; position: relative; padding: 52px 62px; background: #f2e3cf url('/assets/iqbal-mandeep-paper.png') center/100% 100% no-repeat; border-top: 1px solid #8d73552b; }
+.stationery { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; position: relative; padding: 52px 62px; background: #f2e3cf url('/assets/iqbal-mandeep-paper.png') center/cover no-repeat; border-top: 1px solid #8d73552b; }
 .invocation { font: 24px/1.6 'Noto Serif Gurmukhi', 'Nirmala UI', serif; }
 .prayer { font: 14px/1.9 'Noto Serif Gurmukhi', 'Nirmala UI', serif; margin-top: 9px; }
 .ornament { display: flex; justify-content: center; align-items: center; gap: 13px; width: 180px; margin: 21px 0; color: #9d7f50; }
@@ -102,13 +102,13 @@ footer { text-align: center; padding: 25px; background: #bfc3ae; font: 9px var(-
   html { scroll-behavior: auto; }
   * { transition: none !important; }
 }
-@page { size: 160mm 190mm; margin: 0; }
+@page { size: 160mm 284.444444mm; margin: 0; }
 @media print {
   html { scroll-behavior: auto; }
   body { margin: 0; background: #f2e3cf; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   .screen-only, audio { display: none !important; }
   .invitation { width: 160mm; max-width: none; box-shadow: none; }
-  .print-page { width: 160mm; height: 190mm; min-height: 0 !important; break-after: page; break-inside: avoid; border: 0; }
+  .print-page { width: 160mm; height: 284.444444mm; min-height: 0 !important; break-after: page; break-inside: avoid; border: 0; }
   .print-page:last-child { break-after: auto; }
   .stationery { padding: 10mm 12mm; }
   .family-page { padding: 9mm 10mm; }
@@ -191,46 +191,23 @@ footer { text-align: center; padding: 25px; background: #bfc3ae; font: 9px var(-
   .event-page .venue { font-size: 25px; }
   .event-page .event-note { font-size: 13px; line-height: 1.3; }
 }
-/* Landscape PDF export; the on-screen invitation retains its existing layout. */
-@page { size: 320mm 180mm; margin: 0; }
+
+/* Match the reference PDF: portrait pages and undistorted artwork. */
+.event-art-shagun { background-image: url("/assets/iqbal-mandeep-shagun-sikh-9x16.png"); }
+.event-art-jaago { background-image: url("/assets/iqbal-mandeep-jaago-sikh-9x16.png"); }
+.event-art-wedding { background-image: url("/assets/iqbal-mandeep-wedding-sikh-9x16.png"); }
 @media print {
-  .invitation { width: 320mm; }
-  .print-page { width: 320mm; height: 180mm; aspect-ratio: 16 / 9; }
-  .logo-page > img { left: 22.5%; width: 55%; object-fit: cover; }
-  .cover-page { background: #f5ecdc; }
-  .cover-page > img { left: auto; right: 0; width: 53%; object-fit: cover; }
-  .cover-copy { top: 32%; width: 47%; padding: 0 35px; }
-  .cover-copy h1 { font-size: 67px; }
-  .cover-full-names { font-size: 18px; line-height: 1.6; }
-  .cover-date { margin-top: 20px; }
-  .family-page { padding: 8mm 45mm; }
-  .family-page .ornament { margin: 14px 0; }
-  .contact-page { padding: 8mm 35mm; }
-  .contact-page .ornament { margin: 14px 0; }
-  .event-page {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(8, auto);
-    align-content: center;
-    justify-items: center;
-    align-items: center;
-    column-gap: 70px;
-    row-gap: 9px;
-    padding: 24mm 36mm 44mm;
-  }
-  .event-page > :nth-child(1) { grid-column: 1; grid-row: 1; }
-  .event-page > .subtitle { grid-column: 1; grid-row: 2; margin: 0; font-size: 20px; }
-  .event-page > h2 { grid-column: 1; grid-row: 3; font-size: 80px; margin: 0; }
-  .event-page > .ornament:nth-child(4) { grid-column: 1; grid-row: 4; margin: 6px 0; }
-  .event-page > .date-block { grid-column: 1; grid-row: 5 / 9; align-self: start; margin-top: 8px; }
-  .event-page .date-block strong { font-size: 66px; }
-  .event-page .date-block p { font-size: 11px; }
-  .event-page > .schedule { grid-column: 2; grid-row: 1 / 3; width: 100%; font-size: 22px; margin: 0; }
-  .event-page .schedule > div { padding: 6px 0; }
-  .event-page > .ornament:nth-child(7) { grid-column: 2; grid-row: 3; margin: 8px 0; }
-  .event-page > .eyebrow:nth-child(8) { grid-column: 2; grid-row: 4; }
-  .event-page > .venue { grid-column: 2; grid-row: 5; font-size: 34px; margin: 0; }
-  .event-page > .address { grid-column: 2; grid-row: 6; font-size: 19px; }
-  .event-page > .event-note { grid-column: 2; grid-row: 7; font-size: 17px; line-height: 1.5; margin-top: 4px; }
-  .event-page > .time-note { grid-column: 2; grid-row: 8; font-size: 8px; margin-top: 7px; }
+ .print-page { aspect-ratio: 9 / 16; }
+ .event-page { display: flex; padding: 35mm 22mm 47mm; }
+ .event-page .subtitle { font-size: 19px; margin-top: 15px; }
+ .event-page h2 { font-size: 77px; margin-top: 13px; }
+ .event-page .ornament { margin: 20px 0; }
+ .event-page .date-block strong { font-size: 68px; }
+ .event-page .date-block p { font-size: 11px; }
+ .event-page .schedule { font-size: 20px; margin-top: 23px; }
+ .event-page .schedule > div { padding: 5px 0; }
+ .event-page .venue { font-size: 32px; margin-top: 12px; }
+ .event-page .address { font-size: 18px; }
+ .event-page .event-note { font-size: 17px; line-height: 1.5; margin-top: 20px; }
+ .event-page .time-note { font-size: 8px; margin-top: 20px; }
 }

@@ -14,7 +14,7 @@ export const invitationConfig = {
   residence: "Near Bijli Ghar, V.P.O. Sabhra, Patti, Distt. Tarn Taran",
   contacts: ["7837344935", "8427709560"],
   rsvp: ["Gill Family", "Amarjit Singh Gill", "Harsukhdev Singh Gill"],
-  pdf: "/Iqbal-and-Mandeep-Invitation-16x9.pdf",
+  pdf: "/Iqbal-and-Mandeep-Invitation-9x16.pdf",
   celebrations: [
     {id:"shagun", shortName:"Shagun", subtitle:"A beautiful beginning", day:"Saturday", date:"5 December 2026", start:"20261205T053000Z", end:"20261205T093000Z", schedule:[{name:"Shagun ceremony",time:"11:00 a.m."},{name:"Lunch",time:"1:00 p.m."}], venue:"Sagar Villa",address:"Bhikhiwind Road, Dayalpura, Distt. Tarn Taran",note:"Join us as we begin the celebrations with blessings, love and the warmth of family."},
     {id:"jaago", shortName:"Jaago", subtitle:"An evening of song & celebration",day:"Saturday",date:"5 December 2026", start:"20261205T143000Z", end:"20261205T173000Z",schedule:[{name:"Jaago",time:"8:00 p.m."}],venue:"At our residence",address:"Near Bijli Ghar, V.P.O. Sabhra, Patti, Distt. Tarn Taran",note:"An evening of music, dancing and joyful traditions. Come celebrate with the Gill family."},
