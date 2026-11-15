@@ -191,3 +191,46 @@ footer { text-align: center; padding: 25px; background: #bfc3ae; font: 9px var(-
   .event-page .venue { font-size: 25px; }
   .event-page .event-note { font-size: 13px; line-height: 1.3; }
 }
+/* Landscape PDF export; the on-screen invitation retains its existing layout. */
+@page { size: 320mm 180mm; margin: 0; }
+@media print {
+  .invitation { width: 320mm; }
+  .print-page { width: 320mm; height: 180mm; aspect-ratio: 16 / 9; }
+  .logo-page > img { left: 22.5%; width: 55%; object-fit: cover; }
+  .cover-page { background: #f5ecdc; }
+  .cover-page > img { left: auto; right: 0; width: 53%; object-fit: cover; }
+  .cover-copy { top: 32%; width: 47%; padding: 0 35px; }
+  .cover-copy h1 { font-size: 67px; }
+  .cover-full-names { font-size: 18px; line-height: 1.6; }
+  .cover-date { margin-top: 20px; }
+  .family-page { padding: 8mm 45mm; }
+  .family-page .ornament { margin: 14px 0; }
+  .contact-page { padding: 8mm 35mm; }
+  .contact-page .ornament { margin: 14px 0; }
+  .event-page {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(8, auto);
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+    column-gap: 70px;
+    row-gap: 9px;
+    padding: 24mm 36mm 44mm;
+  }
+  .event-page > :nth-child(1) { grid-column: 1; grid-row: 1; }
+  .event-page > .subtitle { grid-column: 1; grid-row: 2; margin: 0; font-size: 20px; }
+  .event-page > h2 { grid-column: 1; grid-row: 3; font-size: 80px; margin: 0; }
+  .event-page > .ornament:nth-child(4) { grid-column: 1; grid-row: 4; margin: 6px 0; }
+  .event-page > .date-block { grid-column: 1; grid-row: 5 / 9; align-self: start; margin-top: 8px; }
+  .event-page .date-block strong { font-size: 66px; }
+  .event-page .date-block p { font-size: 11px; }
+  .event-page > .schedule { grid-column: 2; grid-row: 1 / 3; width: 100%; font-size: 22px; margin: 0; }
+  .event-page .schedule > div { padding: 6px 0; }
+  .event-page > .ornament:nth-child(7) { grid-column: 2; grid-row: 3; margin: 8px 0; }
+  .event-page > .eyebrow:nth-child(8) { grid-column: 2; grid-row: 4; }
+  .event-page > .venue { grid-column: 2; grid-row: 5; font-size: 34px; margin: 0; }
+  .event-page > .address { grid-column: 2; grid-row: 6; font-size: 19px; }
+  .event-page > .event-note { grid-column: 2; grid-row: 7; font-size: 17px; line-height: 1.5; margin-top: 4px; }
+  .event-page > .time-note { grid-column: 2; grid-row: 8; font-size: 8px; margin-top: 7px; }
+}
