@@ -7,7 +7,7 @@ export const invitationConfig = {
   couple: { first: "Iqbal Singh Gill", second: "Mandeep Kaur Sandhu" },
   parents: "Sardarni Baljinder Kaur & S. Jaswant Singh Gill",
   grandparents: "Late Sardarni Surjit Kaur & Late S. Hardeep Singh Gill",
-  brideParents: "Daughter of Sardarni Sarabjeet Kaur & S. Sarwan Singh Sandhu",
+  brideParents: "Daughter of Sardarni Sarbjeet Kaur & S. Sarwan Singh Sandhu",
   brideAddress: "V.P.O. Basarke",
   invocation: "ੴ ਸਤਿਗੁਰ ਪ੍ਰਸਾਦਿ ॥",
   prayer: ["ਸਤਿਗੁਰ ਦਾਤੇ ਕਾਜੁ ਰਚਾਇਆ, ਆਪਣੀ ਮਿਹਰ ਕਰਾਈ ॥", "ਦਾਸਾਂ ਕਾਰਜ ਆਪਿ ਸਵਾਰੇ, ਇਹ ਉਸ ਦੀ ਵਡਿਆਈ ॥"],
