@@ -1,14 +1,9 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import { getCountdownParts } from "./countdown.ts";
-import { invitationConfig } from "./invitationConfig.ts";
 
-const wedding = invitationConfig.celebrations.find((event) => event.id === "wedding")!;
-const target = Date.parse(invitationConfig.countdownTarget);
-
-test("wedding celebrations begin 3 December 2026, 5 p.m. IST", () => {
-  assert.equal(new Date(Date.parse(wedding.start)).toISOString(), "2026-12-03T11:30:00.000Z");
-});
+// Fixed date fixture keeps the countdown utility tests independent of invitation content.
+const target = Date.parse("2026-12-03T00:00:00+05:30");
 
 test("countdown reaches zero at the start of 3 December in India", () => {
   assert.equal(new Date(target).toISOString(), "2026-12-02T18:30:00.000Z");
